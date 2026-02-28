@@ -17,10 +17,13 @@
  * @author Haixing Hu
  */
 function isBlob(value) {
-  if (typeof Blob === 'undefined') {
+  if (value === null || typeof value !== 'object') {
     return false;
   }
-  return (value instanceof Blob) || Object.prototype.toString.call(value) === '[object Blob]';
+  if (typeof Blob !== 'undefined' && value instanceof Blob) {
+    return true;
+  }
+  return Object.prototype.toString.call(value) === '[object Blob]';
 }
 
 export default isBlob;
