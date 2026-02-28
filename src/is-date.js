@@ -17,6 +17,12 @@
  * @author Haixing Hu
  */
 function isDate(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if (typeof Date !== 'undefined' && value instanceof Date) {
+    return true;
+  }
   return Object.prototype.toString.call(value) === '[object Date]';
 }
 
