@@ -20,6 +20,14 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isTypedArray(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if (typeof ArrayBuffer !== 'undefined' && typeof DataView !== 'undefined') {
+    if (ArrayBuffer.isView(value) && !(value instanceof DataView)) {
+      return true;
+    }
+  }
   return hasToStringValueOf(value, TYPED_ARRAY_TYPE_NAMES);
 }
 
