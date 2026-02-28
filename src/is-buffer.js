@@ -22,6 +22,15 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isBuffer(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+    return true;
+  }
+  if (typeof SharedArrayBuffer !== 'undefined' && value instanceof SharedArrayBuffer) {
+    return true;
+  }
   return hasToStringValueOf(value, BUFFER_TYPE_NAMES);
 }
 
