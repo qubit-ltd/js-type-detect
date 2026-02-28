@@ -18,24 +18,20 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  *     `true` if the specified object is an event object; `false` otherwise.
  */
 function isEvent(obj) {
-  if (obj === null || obj === undefined) {
+  if (typeof obj !== 'object' || obj === null) {
     return false;
   }
-  // 使用 Object.prototype.toString.call() 进行跨realm检测
+  if (typeof Event !== 'undefined' && obj instanceof Event) {
+    return true;
+  }
   if (hasToStringValueOf(obj, EVENT_TYPE_NAMES)) {
     return true;
   }
-  // 特性检测，Event对象通常有这些属性
-  if ((typeof obj === 'object')
-      && (typeof obj.type === 'string')
-      && (obj.target !== undefined)
-      && (obj.currentTarget !== undefined)
-      && (typeof obj.preventDefault === 'function')
-      && (typeof obj.stopPropagation === 'function')) {
-    return true;
-  }
-  // 保留原有的 instanceof 检查作为备用
-  return (typeof Event === 'function') && (obj instanceof Event);
+  return typeof obj.type === 'string'
+      && obj.target !== undefined
+      && obj.currentTarget !== undefined
+      && typeof obj.preventDefault === 'function'
+      && typeof obj.stopPropagation === 'function';
 }
 
 export default isEvent;
