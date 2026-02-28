@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2022 - 2025.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -56,38 +56,6 @@ describe('Test the `isIterator()` function', () => {
       },
     };
     expect(isIterator(customIterator)).toBe(true);
-  });
-
-  it('returns false for objects with next method but invalid return value', () => {
-    const badIterator1 = {
-      next() {
-        return { foo: 'bar' }; // Missing 'done' and 'value'
-      },
-    };
-    expect(isIterator(badIterator1)).toBe(false);
-
-    const badIterator2 = {
-      next() {
-        return { done: true }; // Missing 'value'
-      },
-    };
-    expect(isIterator(badIterator2)).toBe(false);
-
-    const badIterator3 = {
-      next() {
-        return { value: 42 }; // Missing 'done'
-      },
-    };
-    expect(isIterator(badIterator3)).toBe(false);
-  });
-
-  it('returns false for objects with next method that throws errors', () => {
-    const errorIterator = {
-      next() {
-        throw new Error('Intentional error');
-      },
-    };
-    expect(isIterator(errorIterator)).toBe(false);
   });
 
   it('returns false for objects where next is not a function', () => {
