@@ -17,7 +17,13 @@
  * @author Haixing Hu
  */
 function isSymbol(value) {
-  return (typeof value === 'symbol');
+  if (typeof value === 'symbol') {
+    return true;
+  }
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  return Object.prototype.toString.call(value) === '[object Symbol]';
 }
 
 export default isSymbol;

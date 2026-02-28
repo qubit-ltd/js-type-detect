@@ -17,8 +17,11 @@ import { SYMBOL_EXISTS } from '../src/feature-detect';
  */
 describe('Test the `isSymbol()` function', () => {
   if (SYMBOL_EXISTS) {
-    it('returns true for a symbol', () => {
+    it('returns true for a primitive symbol', () => {
       expect(isSymbol(Symbol('test'))).toBe(true);
+    });
+    it('returns true for a Symbol object', () => {
+      expect(isSymbol(Object(Symbol('test')))).toBe(true);
     });
   }
   it('returns false for a string', () => {
