@@ -22,6 +22,12 @@
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isNumber(value) {
+  if (typeof value === 'number') {
+    return true;
+  }
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
   return Object.prototype.toString.call(value) === '[object Number]';
 }
 
