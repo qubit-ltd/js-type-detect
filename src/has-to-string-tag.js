@@ -18,12 +18,10 @@
  */
 function hasToStringTag(obj) {
   return (obj !== null)
-    && (typeof obj === 'object')
+    && (typeof obj === 'object' || typeof obj === 'function')
     && (typeof Symbol !== 'undefined')
     && (typeof Symbol.toStringTag !== 'undefined')
-    && (Symbol.toStringTag in obj)
-    && (obj[Symbol.toStringTag] !== undefined)
-    && (obj[Symbol.toStringTag] !== null);
+    && (obj[Symbol.toStringTag] !== undefined && obj[Symbol.toStringTag] !== null);
 }
 
 export default hasToStringTag;
