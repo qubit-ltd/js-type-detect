@@ -18,6 +18,7 @@ describe('Test the `isNonNullObject()` function', () => {
     expect(isNonNullObject(new Set())).toBe(true);
     expect(isNonNullObject(new WeakMap())).toBe(true);
     expect(isNonNullObject(new WeakSet())).toBe(true);
+
     // eslint-disable-next-line prefer-regex-literals
     expect(isNonNullObject(new RegExp('abc'))).toBe(true);
     expect(isNonNullObject(new Error('test'))).toBe(true);

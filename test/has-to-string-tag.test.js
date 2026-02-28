@@ -80,6 +80,7 @@ describe('Test the `hasToStringTag()` function', () => {
       expect(hasToStringTag(setObj)).toBe(setHasTag);
 
       // 对于 RegExp 对象
+
       // eslint-disable-next-line prefer-regex-literals
       const regexObj = new RegExp('abc');
       const regexHasTag = Symbol.toStringTag in regexObj;

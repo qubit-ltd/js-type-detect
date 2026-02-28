@@ -20,7 +20,7 @@ export function getGlobalObjectWithFallback(obj) {
     },
     configurable: true,
   });
-  const global = obj.typeDetectGlobalObject; // eslint-disable-line
+  const global = obj.typeDetectGlobalObject;
   delete obj.typeDetectGlobalObject;
   return global;
 }
@@ -43,7 +43,7 @@ export function getGlobalObjectComplete(obj, mockGlobalThis = null) {
 
     // 完全复制 global-object.js 中的逻辑
     if (typeof globalThis === 'object') {
-      return globalThis; // eslint-disable-line
+      return globalThis;
     }
 
     Object.defineProperty(obj, 'typeDetectGlobalObject', {
@@ -56,8 +56,8 @@ export function getGlobalObjectComplete(obj, mockGlobalThis = null) {
     try {
       // 注意：在这里我们不能使用变量名 typeDetectGlobalObject
       // 因为 Jest 会转换代码，所以我们使用 obj['typeDetectGlobalObject']
-      result = obj['typeDetectGlobalObject']; // eslint-disable-line
-    } catch (e) {
+      result = obj['typeDetectGlobalObject'];
+    } catch {
       // 处理可能的异常
       console.error('Error accessing typeDetectGlobalObject:', e);
       if (typeof window !== 'undefined') {

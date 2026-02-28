@@ -21,8 +21,6 @@ import {
   INTL_SEGMENTER_EXISTS,
 } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isIntl()` function.
  *

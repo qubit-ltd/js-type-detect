@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 import BUFFER_TYPE_NAMES from './buffer-type-names';
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.

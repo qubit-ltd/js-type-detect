@@ -127,6 +127,7 @@ describe('Test the `isEvent()` function', () => {
     });
 
     // Restore original toString
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

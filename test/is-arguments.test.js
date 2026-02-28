@@ -9,8 +9,6 @@
 import { runInNewContext } from 'node:vm';
 import isArguments from '../src/is-arguments';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isArguments()` function.
  *
@@ -42,6 +40,7 @@ describe('Test the `isArguments()` function', () => {
     };
     // 重新定义toString方法来避免使用Symbol.toStringTag
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function () {
       if (this === incompleteArgs) {
@@ -65,6 +64,7 @@ describe('Test the `isArguments()` function', () => {
     expect(isArguments(completelyFakeArgs)).toBe(true);
 
     // 恢复原始toString方法
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -80,6 +80,7 @@ describe('Test the `isArguments()` function', () => {
     // 创建一个对象模拟严格模式下的参数对象
     const mockStrictArgs = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function () {
       if (this === mockStrictArgs) {
@@ -98,6 +99,7 @@ describe('Test the `isArguments()` function', () => {
     expect(isArguments(mockStrictArgs)).toBe(true);
 
     // 恢复原始toString方法
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -106,6 +108,7 @@ describe('Test the `isArguments()` function', () => {
     // 创建一个toString方法返回[object Arguments]的对象
     const obj = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function fakeToString() {
       if (this === obj) {
@@ -116,6 +119,7 @@ describe('Test the `isArguments()` function', () => {
     expect(isArguments(obj)).toBe(true);
 
     // 恢复原始toString方法
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

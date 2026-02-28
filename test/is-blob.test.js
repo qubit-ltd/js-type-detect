@@ -10,8 +10,6 @@ import vm from 'node:vm';
 import { isBlob } from '../src';
 import { BLOB_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isBlob()` function.
  *

@@ -10,8 +10,6 @@ import { runInNewContext } from 'node:vm';
 import { isCssom } from '../src';
 import { FONT_FACE_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isCssom()` function.
  *
@@ -37,7 +35,7 @@ describe('Test the `isCssom()` function', () => {
     // 在某些环境中CSSRuleList可能不被正确识别
     try {
       expect(isCssom(cssRuleList)).toBe(true);
-    } catch (e) {
+    } catch {
       console.warn('CSSRuleList detection may not work in this environment');
       // 确保测试不会因为环境问题而失败
       expect(cssRuleList).toBeDefined();
@@ -82,7 +80,7 @@ describe('Test the `isCssom()` function', () => {
       style.sheet.insertRule('@media screen and (min-width: 480px) { body { background-color: lightgreen; } }', 0);
       const mediaRule = style.sheet.cssRules[0];
       expect(isCssom(mediaRule)).toBe(true);
-    } catch (e) {
+    } catch {
       console.warn('CSSMediaRule insertion may not work in this environment');
       expect(true).toBe(true); // 如果环境不支持插入媒体规则，测试仍然通过
     } finally {
@@ -97,7 +95,7 @@ describe('Test the `isCssom()` function', () => {
       style.sheet.insertRule('@keyframes testAnimation { from { opacity: 0; } to { opacity: 1; } }', 0);
       const keyframesRule = style.sheet.cssRules[0];
       expect(isCssom(keyframesRule)).toBe(true);
-    } catch (e) {
+    } catch {
       console.warn('CSSKeyframesRule insertion may not work in this environment');
       expect(true).toBe(true); // 如果环境不支持插入关键帧规则，测试仍然通过
     } finally {
@@ -115,7 +113,7 @@ describe('Test the `isCssom()` function', () => {
         const keyframeRule = style.sheet.cssRules[0].cssRules[0]; // 获取"from"关键帧
         expect(isCssom(keyframeRule)).toBe(true);
       }
-    } catch (e) {
+    } catch {
       console.warn('CSSKeyframeRule access may not work in this environment');
       expect(true).toBe(true); // 如果环境不支持访问关键帧规则，测试仍然通过
     } finally {
@@ -138,7 +136,7 @@ describe('Test the `isCssom()` function', () => {
       try {
         const fontFaceSet = new FontFaceSet([]);
         expect(isCssom(fontFaceSet)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('FontFaceSet constructor is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持FontFaceSet构造函数，测试将通过但不执行实际检查
       }
@@ -157,7 +155,7 @@ describe('Test the `isCssom()` function', () => {
         const mediaList = style.sheet.media;
         expect(isCssom(mediaList)).toBe(true);
         document.head.removeChild(style);
-      } catch (e) {
+      } catch {
         console.warn('MediaList is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持MediaList，测试将通过但不执行实际检查
       }
@@ -204,7 +202,7 @@ describe('Test the `isCssom()` function', () => {
       try {
         const transitionEvent = new TransitionEvent('transitionend');
         expect(isCssom(transitionEvent)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('TransitionEvent is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持TransitionEvent，测试将通过但不执行实际检查
       }
@@ -219,7 +217,7 @@ describe('Test the `isCssom()` function', () => {
       try {
         const animationEvent = new AnimationEvent('animationend');
         expect(isCssom(animationEvent)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('AnimationEvent is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持AnimationEvent，测试将通过但不执行实际检查
       }

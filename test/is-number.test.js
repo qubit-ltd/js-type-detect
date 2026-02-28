@@ -10,8 +10,6 @@ import { runInNewContext } from 'node:vm';
 import { isNumber } from '../src';
 import { BIGINT_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isNumber()` function.
  *

@@ -1,17 +1,17 @@
 {
   "name": "@qubit-ltd/type-detect",
-  "version": "2.2.3",
+  "version": "2.2.5",
   "description": "A JavaScript library for detecting common types",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Haixing-Hu/js-type-detect.git"
+    "url": "git+https://github.com/qubit-ltd/js-type-detect.git"
   },
   "bugs": {
-    "url": "https://github.com/Haixing-Hu/js-type-detect/issues"
+    "url": "https://github.com/qubit-ltd/js-type-detect/issues"
   },
-  "homepage": "https://github.com/Haixing-Hu/js-type-detect",
+  "homepage": "https://github.com/qubit-ltd/js-type-detect",
   "main": "dist/type-detect.min.cjs",
   "module": "dist/type-detect.min.mjs",
   "exports": {
@@ -47,9 +47,7 @@
     "lint": "eslint ./src ./test",
     "doc": "jsdoc -c jsdoc.json",
     "es5": "check-es-version --es-version=5 --show-error=true --target-dir=dist",
-    "deploy": "npm run lint && npm run test && npm run build:all && npm publish --registry='https://npm.qubit.ltd/' --access public",
-    "deploy:public": "npm run lint && npm run test && npm run build:all && npm publish --registry='https://registry.npmjs.org/' --access public",
-    "deploy:all": "npm run deploy && npm publish --registry='https://registry.npmjs.org/' --access public"
+    "deploy": "npm run lint && npm run test && npm run build:all && npm publish --registry='https://registry.npmjs.org/' --access public"
   },
   "peerDependencies": {
     "@babel/runtime": "^7.26.0"

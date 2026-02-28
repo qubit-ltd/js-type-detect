@@ -45,6 +45,7 @@ describe('Test the `getTypeName()` function', () => {
     expect(getTypeName({})).toBe('Object');
     expect(getTypeName([])).toBe('Array');
     expect(getTypeName(new Date())).toBe('Date');
+
     // eslint-disable-next-line prefer-regex-literals
     expect(getTypeName(new RegExp(''))).toBe('RegExp');
     expect(getTypeName(new Map())).toBe('Map');
@@ -85,6 +86,7 @@ describe('Test the `getTypeName()` function', () => {
     // 创建一个mock对象，模拟toString返回空类名的情况
     const mockEmptyClassObject = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function () {
       if (this === mockEmptyClassObject) {
@@ -100,6 +102,7 @@ describe('Test the `getTypeName()` function', () => {
     const typeName = getTypeName(mockEmptyClassObject);
     expect(typeName).toBe('');
     // 恢复原始toString
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -108,6 +111,7 @@ describe('Test the `getTypeName()` function', () => {
     // 创建一个mock对象，模拟toString返回空类名的情况
     const mockEmptyClassObject = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function () {
       if (this === mockEmptyClassObject) {
@@ -123,6 +127,7 @@ describe('Test the `getTypeName()` function', () => {
     const typeName = getTypeName(mockEmptyClassObject);
     expect(typeName).toBe('');
     // 恢复原始toString
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -131,6 +136,7 @@ describe('Test the `getTypeName()` function', () => {
     // 创建一个mock对象，模拟toString返回空类名的情况
     const mockEmptyClassObject = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function () {
       if (this === mockEmptyClassObject) {
@@ -146,6 +152,7 @@ describe('Test the `getTypeName()` function', () => {
     const typeName = getTypeName(mockEmptyClassObject);
     expect(typeName).toBe('AsyncGenerator');
     // 恢复原始toString
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

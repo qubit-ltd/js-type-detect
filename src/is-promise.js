@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2025.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -24,7 +24,7 @@ function isPromise(value) {
     if (value instanceof Promise) {
       return true;
     }
-  } catch (e) {
+  } catch {
     // ignore error during instanceof check
   }
   // use toString value to cross realms
@@ -33,7 +33,7 @@ function isPromise(value) {
   }
   try {
     return (typeof value.then === 'function') && (typeof value.catch === 'function');
-  } catch (e) {
+  } catch {
     return false;
   }
 }

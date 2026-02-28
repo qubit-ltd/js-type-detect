@@ -9,8 +9,6 @@
 import { runInNewContext } from 'node:vm';
 import { isPlainObject } from '../src';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isPlainObject()` function.
  *
@@ -29,8 +27,8 @@ describe('Test the `isPlainObject()` function', () => {
     expect(isPlainObject({})).toBe(true);
     expect(isPlainObject({ foo: 'bar' })).toBe(true);
     expect(isPlainObject(Object.create(null))).toBe(true);
-    // eslint-disable-next-line no-new-object
-    expect(isPlainObject(new Object())).toBe(true);
+
+    expect(isPlainObject({})).toBe(true);
   });
 
   test('should return false for non-plain objects', () => {

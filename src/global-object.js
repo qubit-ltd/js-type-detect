@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2023.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -18,7 +18,7 @@
  */
 const GLOBAL_OBJECT = ((obj) => {
   if (typeof globalThis === 'object') {
-    return globalThis; // eslint-disable-line
+    return globalThis;
   }
   Object.defineProperty(obj, 'typeDetectGlobalObject', {
     get() {
@@ -26,7 +26,7 @@ const GLOBAL_OBJECT = ((obj) => {
     },
     configurable: true,
   });
-  const global = typeDetectGlobalObject; // eslint-disable-line
+  const global = typeDetectGlobalObject;
   delete obj.typeDetectGlobalObject;
   return global;
 })(Object.prototype);

@@ -3,8 +3,8 @@
 [![npm package](https://img.shields.io/npm/v/@qubit-ltd/type-detect.svg)](https://npmjs.com/package/@qubit-ltd/type-detect)
 [![License](https://img.shields.io/badge/License-Apache-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![中文文档](https://img.shields.io/badge/文档-中文版-blue.svg)](README.zh_CN.md)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Haixing-Hu/js-type-detect/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/Haixing-Hu/js-type-detect/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/Haixing-Hu/js-type-detect/badge.svg?branch=master)](https://coveralls.io/github/Haixing-Hu/js-type-detect?branch=master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/qubit-ltd/js-type-detect/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/qubit-ltd/js-type-detect/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/qubit-ltd/js-type-detect/badge.svg?branch=master)](https://coveralls.io/github/qubit-ltd/js-type-detect?branch=master)
 
 
 [type-detect] is a lightweight JavaScript library that provides utilities
@@ -321,4 +321,4 @@ If you find any issues or have suggestions for improvements, please feel free to
 [typeinfo]: https://npmjs.com/package/@qubit-ltd/typeinfo
 [global object]: https://developer.mozilla.org/en-US/docs/Glossary/Global_object
 [Standard built-in objects]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
-[GitHub repository]: https://github.com/Haixing-Hu/js-type-detect
+[GitHub repository]: https://github.com/qubit-ltd/js-type-detect

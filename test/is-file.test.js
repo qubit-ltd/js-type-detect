@@ -16,8 +16,6 @@ import {
   FILE_READER_SYNC_EXISTS,
 } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isEvent()` function.
  *
@@ -59,7 +57,7 @@ describe('Test the `isFile()` function', () => {
         try {
           const fileReaderSync = new FileReaderSync();
           expect(isFile(fileReaderSync)).toBe(true);
-        } catch (e) {
+        } catch {
           console.warn('FileReaderSync is not supported in this environment');
           expect(true).toBe(true); // 如果环境不支持FileReaderSync，测试将通过但不执行实际检查
         }

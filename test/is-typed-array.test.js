@@ -22,8 +22,6 @@ import {
   UINT8CLAMPEDARRAY_EXISTS,
 } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isTypedArray()` function.
  *

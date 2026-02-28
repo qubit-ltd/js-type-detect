@@ -7,7 +7,6 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-/* eslint-disable no-undef */
 import isSvgDom from '../src/is-svg-dom';
 
 /**
@@ -54,7 +53,7 @@ describe('Test the `isSvgDom()` function', () => {
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         const transform = svg.createSVGTransform();
         expect(isSvgDom(transform)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('SVGTransform is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持，测试将通过但不执行实际检查
       }
@@ -68,7 +67,7 @@ describe('Test the `isSvgDom()` function', () => {
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         const point = svg.createSVGPoint();
         expect(isSvgDom(point)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('SVGPoint is not fully supported in this environment');
         expect(true).toBe(true); // 如果环境不支持，测试将通过但不执行实际检查
       }

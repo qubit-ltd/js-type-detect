@@ -44,8 +44,6 @@ import {
 import BUILT_IN_TYPE_NAMES from '../src/impl/built-in-type-names';
 import GLOBAL_OBJECT_NAMES from '../src/impl/global-object-names';
 
-/* eslint-disable no-undef, max-classes-per-file */
-
 /**
  * Unit test of the `isBuiltInClass()` function.
  *
@@ -124,6 +122,7 @@ describe('Test the `isBuiltInClass()` function', () => {
     // Test each known toString value
     GLOBAL_OBJECT_NAMES.forEach((name) => {
       // Mock toString to return a global object string value
+
       // eslint-disable-next-line no-extend-native
       Object.prototype.toString = function mockToString() {
         if (this === mockGlobalObject) {
@@ -136,6 +135,7 @@ describe('Test the `isBuiltInClass()` function', () => {
     });
 
     // Restore original toString method
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -146,6 +146,7 @@ describe('Test the `isBuiltInClass()` function', () => {
     for (let i = 0; i < 5; i++) {
       const name = BUILT_IN_TYPE_NAMES[i];
       // 创建一个具有与内置类相同名称的函数
+
       // eslint-disable-next-line no-new-func
       const mockBuiltInClass = new Function(`return function ${name}() {}`).call(null);
 
@@ -156,7 +157,7 @@ describe('Test the `isBuiltInClass()` function', () => {
         const result = isBuiltInClass(mockBuiltInClass);
         // 如果测试通过或者捕获到预期的错误，就认为测试成功
         expect(true).toBe(true);
-      } catch (e) {
+      } catch {
         // 忽略任何错误，因为我们无法完全模拟内置类的所有特性
       }
     }

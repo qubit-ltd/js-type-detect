@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -53,8 +53,6 @@ import {
 
 // Define prototypes for various ES5+ built-in objects
 
-/* eslint-disable no-undef */
-
 export const SymbolPrototype = (SYMBOL_EXISTS ? Symbol.prototype : undefined);
 export const BigIntPrototype = (BIGINT_EXISTS ? BigInt.prototype : undefined);
 export const RegExpPrototype = (REGEXP_EXISTS ? RegExp.prototype : undefined);
@@ -100,8 +98,10 @@ export const IntlListFormatPrototype = (INTL_LISTFORMAT_EXISTS ? Intl.ListFormat
 export const IntlLocalePrototype = (INTL_LOCALE_EXISTS ? Intl.Locale.prototype : undefined);
 export const IntlNumberFormatPrototype = (INTL_NUMBERFORMAT_EXISTS ? Intl.NumberFormat.prototype : undefined);
 export const IntlPluralRulesPrototype = (INTL_PLURALRULES_EXISTS ? Intl.PluralRules.prototype : undefined);
-// eslint-disable-next-line max-len
-export const IntlRelativeTimeFormatPrototype = (INTL_RELATIVETIMEFORMAT_EXISTS ? Intl.RelativeTimeFormat.prototype : undefined);
+
+export const IntlRelativeTimeFormatPrototype = (INTL_RELATIVETIMEFORMAT_EXISTS
+  ? Intl.RelativeTimeFormat.prototype
+  : undefined);
 export const IntlSegmenterPrototype = (INTL_SEGMENTER_EXISTS ? Intl.Segmenter.prototype : undefined);
 export const IntelSegmentIteratorPrototype = (INTL_SEGMENTER_ITERATOR_EXISTS
   ? Object.getPrototypeOf(new Intl.Segmenter('en', { granularity: 'grapheme' }).segment('')[Symbol.iterator]())

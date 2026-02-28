@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -30,7 +30,7 @@ function isConsole(obj) {
     if (Object.prototype.toString.call(obj) === '[object Console]') {
       return true;
     }
-  } catch (e) {
+  } catch {
     // Ignore error
   }
   // Duck-typing fallback for cross-realm or mock consoles

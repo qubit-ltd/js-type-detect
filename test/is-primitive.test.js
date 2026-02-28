@@ -9,8 +9,6 @@
 import vm from 'node:vm';
 import { isPrimitive } from '../src';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isPrimitive()` function.
  *

@@ -15,8 +15,6 @@ import {
   DOM_RECT_EXISTS,
 } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isDom()` function.
  *
@@ -120,7 +118,7 @@ describe('Test the `isDom()` function', () => {
           endOffset: 0,
         });
         expect(isDom(staticRange)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('StaticRange is not supported in this environment');
         expect(true).toBe(true); // 如果环境不支持StaticRange，测试将通过但不执行实际检查
       } finally {
@@ -137,7 +135,7 @@ describe('Test the `isDom()` function', () => {
           const audio = document.createElement('audio');
           const timeRanges = audio.buffered;
           expect(isDom(timeRanges)).toBe(true);
-        } catch (e) {
+        } catch {
           console.warn('TimeRanges is not supported in this environment');
           expect(true).toBe(true); // 如果环境不支持TimeRanges，测试将通过但不执行实际检查
         }
@@ -159,7 +157,7 @@ describe('Test the `isDom()` function', () => {
         try {
           const eventTarget = new EventTarget();
           expect(isDom(eventTarget)).toBe(true);
-        } catch (e) {
+        } catch {
           console.warn('EventTarget constructor is not supported in this environment');
           expect(true).toBe(true); // 如果环境不支持EventTarget构造函数，测试将通过但不执行实际检查
         }
@@ -176,7 +174,7 @@ describe('Test the `isDom()` function', () => {
           const controller = new AbortController();
           expect(isDom(controller)).toBe(true);
           expect(isDom(controller.signal)).toBe(true);
-        } catch (e) {
+        } catch {
           console.warn('AbortController is not supported in this environment');
           expect(true).toBe(true); // 如果环境不支持AbortController，测试将通过但不执行实际检查
         }
@@ -287,7 +285,7 @@ describe('Test the `isDom()` function', () => {
         const range = document.createRange();
         expect(isDom(range)).toBe(true);
         expect(range instanceof AbstractRange).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('AbstractRange is not supported in this environment');
         expect(true).toBe(true); // 如果环境不支持AbstractRange，测试将通过但不执行实际检查
       }
@@ -301,7 +299,7 @@ describe('Test the `isDom()` function', () => {
       try {
         const point = new DOMPointReadOnly(0, 0, 0, 1);
         expect(isDom(point)).toBe(true);
-      } catch (e) {
+      } catch {
         console.warn('DOMPointReadOnly is not supported in this environment');
         expect(true).toBe(true); // 如果环境不支持DOMPointReadOnly，测试将通过但不执行实际检查
       }

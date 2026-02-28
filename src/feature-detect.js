@@ -1,13 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
-
-/* eslint-disable no-undef */
 
 /**
  * Whether the `Symbol` exists.
@@ -623,5 +621,6 @@ export const FILE_READER_SYNC_EXISTS = (typeof FileReaderSync === 'function');
  *
  * @type {boolean}
  */
+
 // eslint-disable-next-line func-names, no-empty-function
 export const ASYNC_FUNCTION_EXISTS = ((async function () {}).constructor.name === 'AsyncFunction');

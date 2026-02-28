@@ -12,8 +12,6 @@
 
 import isConsole from '../src/is-console';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isConsole()` function.
  *
@@ -50,6 +48,7 @@ describe('Test the `isConsole()` function', () => {
     // 创建一个模拟对象，toString会返回[object Console]
     const mockConsole = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function mockToString() {
       if (this === mockConsole) {
@@ -61,6 +60,7 @@ describe('Test the `isConsole()` function', () => {
     expect(isConsole(mockConsole)).toBe(true);
 
     // 恢复原始toString方法
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });
@@ -69,6 +69,7 @@ describe('Test the `isConsole()` function', () => {
     // 创建一个模拟对象，调用toString时会抛出错误
     const errorObject = {};
     const originalToString = Object.prototype.toString;
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = function mockToString() {
       if (this === errorObject) {
@@ -81,6 +82,7 @@ describe('Test the `isConsole()` function', () => {
     expect(isConsole(errorObject)).toBe(false);
 
     // 恢复原始toString方法
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

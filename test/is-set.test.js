@@ -10,8 +10,6 @@ import { runInNewContext } from 'node:vm';
 import { isSet } from '../src';
 import { SET_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isSet()` function.
  *

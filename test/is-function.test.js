@@ -21,8 +21,7 @@ describe('Test the `isFunction()` function', () => {
     expect(isFunction(foo)).toBe(true);
   });
   it('returns true for an unnamed function', () => {
-    // eslint-disable-next-line func-names, prefer-arrow-callback
-    expect(isFunction(function () { console.log('hello'); })).toBe(true);
+    expect(isFunction(() => { console.log('hello'); })).toBe(true);
   });
   it('returns true for an arrow function', () => {
     expect(isFunction((x) => x + 1)).toBe(true);
@@ -50,8 +49,7 @@ describe('Test the `isFunction()` function', () => {
       expect(isFunction(foo)).toBe(true);
     });
     it('returns true for an unnamed async function', () => {
-      // eslint-disable-next-line func-names, prefer-arrow-callback
-      expect(isFunction(async function () { console.log('hello'); })).toBe(true);
+      expect(isFunction(async () => { console.log('hello'); })).toBe(true);
     });
     it('returns true for an async arrow function', () => {
       expect(isFunction(async (x) => x + 1)).toBe(true);

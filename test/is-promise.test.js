@@ -10,8 +10,6 @@ import vm from 'node:vm';
 import { isPromise } from '../src';
 import { PROMISE_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isPromise()` function.
  *
@@ -20,8 +18,9 @@ import { PROMISE_EXISTS } from '../src/feature-detect';
 describe('Test the `isPromise()` function', () => {
   if (PROMISE_EXISTS) {
     it('Promise', () => {
-      // eslint-disable-next-line  no-promise-executor-return
-      const promise = new Promise((resolve) => resolve(true));
+      const promise = new Promise((resolve) => {
+        resolve(true);
+      });
       expect(isPromise(promise)).toBe(true);
     });
 

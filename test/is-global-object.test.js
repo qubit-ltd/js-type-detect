@@ -84,6 +84,7 @@ describe('Test the `isGlobalObject()` function', () => {
     });
 
     // Restore original toString
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

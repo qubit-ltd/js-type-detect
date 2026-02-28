@@ -57,7 +57,7 @@ describe('Test the global-object.js fallback mechanism', () => {
           // 使用间接方式访问属性，避免使用 eval
           const result = testObj['typeDetectGlobalObject'];
           return result;
-        } catch (e) {
+        } catch {
           return global; // 出错时返回全局对象
         } finally {
           delete testObj.typeDetectGlobalObject;

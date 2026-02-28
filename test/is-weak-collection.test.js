@@ -10,8 +10,6 @@ import { runInNewContext } from 'node:vm';
 import { isWeakCollection } from '../src';
 import { WEAKMAP_EXISTS, WEAKSET_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isWeakCollection()` function.
  *

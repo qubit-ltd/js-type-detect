@@ -9,8 +9,6 @@
 import vm from 'node:vm';
 import { isRegExp } from '../src';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isRegExp()` function.
  *
@@ -23,10 +21,13 @@ describe('Test the `isRegExp()` function', () => {
     expect(isRegExp(/abc/i)).toBe(true);
     expect(isRegExp(/abc/m)).toBe(true);
     expect(isRegExp(/abc/gimuy)).toBe(true);
+
     // eslint-disable-next-line prefer-regex-literals
     expect(isRegExp(new RegExp('abc'))).toBe(true);
+
     // eslint-disable-next-line prefer-regex-literals
     expect(isRegExp(new RegExp('abc', 'g'))).toBe(true);
+
     // eslint-disable-next-line prefer-regex-literals
     expect(isRegExp(RegExp('abc'))).toBe(true);
   });

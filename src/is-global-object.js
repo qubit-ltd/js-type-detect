@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2014 - 2026.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
@@ -44,7 +44,7 @@ function isGlobalObject(value) {
       && (typeof value.isNaN === 'function')
       && (typeof value.isFinite === 'function');
     return hasGlobalThis && hasCommonGlobals && hasGlobalMethods;
-  } catch (e) {
+  } catch {
     return false;
   }
 }

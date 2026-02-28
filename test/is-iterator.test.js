@@ -97,6 +97,7 @@ describe('Test the `isIterator()` function', () => {
     // Test each known toString value
     ITERATOR_TYPE_NAMES.forEach((typeName) => {
       // Mock toString to return the iterator string value
+
       // eslint-disable-next-line no-extend-native
       Object.prototype.toString = function mockToString() {
         if (this === mockIterator) {
@@ -109,6 +110,7 @@ describe('Test the `isIterator()` function', () => {
     });
 
     // Restore original toString method
+
     // eslint-disable-next-line no-extend-native
     Object.prototype.toString = originalToString;
   });

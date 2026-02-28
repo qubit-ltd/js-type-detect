@@ -10,8 +10,6 @@ import { runInNewContext } from 'node:vm';
 import { isMap } from '../src';
 import { MAP_EXISTS } from '../src/feature-detect';
 
-/* eslint-disable no-undef */
-
 /**
  * Unit test of the `isMap()` function.
  *
