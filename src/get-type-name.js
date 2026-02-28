@@ -12,31 +12,35 @@ import fixTypeNameCompatibility from './impl/fix-type-name-compatibility';
 /**
  * Gets the type name of a value.
  *
- * @param {object} value
- *     the value, must be an object.
+ * @param {any} value
+ *     the value to be detected.
  * @return {string}
  *     the type name of the value.
  */
 function getTypeName(value) {
   if (value === null) {
     return 'null';
-  } else if (value === undefined) {
+  }
+  if (value === undefined) {
     return 'undefined';
   }
   let typeName = '';
   if (hasToStringTag(value)) {
-    // note that Generator and AsyncGenerator objects has defined its own
+    // Note that Generator and AsyncGenerator objects has defined its own
     // Symbol.toStringTag property, so the following code will handle those cases.
     typeName = value[Symbol.toStringTag].replace(/\s/g, '');
-  } else if (value.constructor
-      && (value.constructor.name !== undefined)
-      && (value.constructor.name !== null)
-      && (value.constructor.name !== 'Object')) {
-    // user defined class instance
-    typeName = value.constructor.name;
   } else {
-    const str = Object.prototype.toString.call(value);
-    typeName = str.slice(8, -1).replace(/\s/g, '');
+    const { constructor } = value;
+    if (constructor
+        && (constructor.name !== undefined)
+        && (constructor.name !== null)
+        && (constructor.name !== 'Object')) {
+      // user defined class instance
+      typeName = constructor.name;
+    } else {
+      const str = Object.prototype.toString.call(value);
+      typeName = str.slice(8, -1).replace(/\s/g, '');
+    }
   }
   return fixTypeNameCompatibility(typeName);
 }
