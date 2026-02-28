@@ -17,6 +17,12 @@
  * @author Haixing Hu
  */
 function isRegExp(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if (value instanceof RegExp) {
+    return true;
+  }
   return Object.prototype.toString.call(value) === '[object RegExp]';
 }
 
