@@ -20,6 +20,9 @@ import HTML_DOM_TYPE_NAMES from './impl/html-dom-type-names';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isHtmlDom(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return false;
+  }
   return hasTypeNameOf(obj, HTML_DOM_TYPE_NAMES);
 }
 
