@@ -28,6 +28,13 @@ function isPrimitiveWrapper(value) {
   if (value === null || typeof value !== 'object') {
     return false;
   }
+  if (value instanceof String
+      || value instanceof Number
+      || value instanceof Boolean
+      || (typeof BigInt !== 'undefined' && value instanceof BigInt)
+      || (typeof Symbol !== 'undefined' && value instanceof Symbol)) {
+    return true;
+  }
   const tag = Object.prototype.toString.call(value);
   return tag === '[object String]'
       || tag === '[object Number]'
