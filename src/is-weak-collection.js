@@ -22,6 +22,13 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isWeakCollection(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if ((typeof WeakMap !== 'undefined' && value instanceof WeakMap)
+   || (typeof WeakSet !== 'undefined' && value instanceof WeakSet)) {
+    return true;
+  }
   return hasToStringValueOf(value, WEAK_COLLECTION_TYPE_NAMES);
 }
 
