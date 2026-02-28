@@ -18,11 +18,10 @@ import getTypeName from './get-type-name';
  * @author Haixing Hu
  */
 function isGenerator(value) {
-  if ((typeof value !== 'object') || (value === null)) {
+  if (value === null || typeof value !== 'object') {
     return false;
   }
-  const typeName = getTypeName(value);
-  return /Generator$/.test(typeName);
+  return /Generator$/.test(getTypeName(value));
 }
 
 export default isGenerator;
