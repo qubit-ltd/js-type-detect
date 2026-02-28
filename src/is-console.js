@@ -17,31 +17,27 @@
  * @author Haixing Hu
  */
 function isConsole(obj) {
-  if (obj === null || obj === undefined) {
+  if (obj === null || typeof obj !== 'object') {
     return false;
   }
-  // 检查常见属性来支持跨realm检测
-  if (typeof obj === 'object') {
-    // 基本方法检测
-    if (typeof obj.log === 'function'
-        && typeof obj.error === 'function'
-        && typeof obj.warn === 'function'
-        && typeof obj.info === 'function') {
-      return true;
-    }
+  if (typeof console !== 'undefined' && obj === console) {
+    return true;
   }
-  // 尝试使用 toString 检测
+  if (typeof window !== 'undefined' && obj === window.console) {
+    return true;
+  }
   try {
-    const type = Object.prototype.toString.call(obj);
-    if (type === '[object Console]') {
+    if (Object.prototype.toString.call(obj) === '[object Console]') {
       return true;
     }
   } catch (e) {
-    // 忽略错误
+    // Ignore error
   }
-  // 检查是否为当前realm中的控制台对象
-  return ((obj === console)
-    || (typeof window !== 'undefined' && obj === window.console));
+  // Duck-typing fallback for cross-realm or mock consoles
+  return typeof obj.log === 'function'
+      && typeof obj.error === 'function'
+      && typeof obj.warn === 'function'
+      && typeof obj.info === 'function';
 }
 
 export default isConsole;
