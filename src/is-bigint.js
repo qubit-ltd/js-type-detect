@@ -17,7 +17,7 @@
  * @author Haixing Hu
  */
 function isBigInt(value) {
-  return (typeof value === 'bigint');
+  return typeof value === 'bigint';
 }
 
 export default isBigInt;
