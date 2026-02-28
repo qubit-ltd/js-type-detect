@@ -20,7 +20,10 @@
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isBoolean(value) {
-  return Object.prototype.toString.call(value) === '[object Boolean]';
+  return typeof value === 'boolean'
+    || (typeof value === 'object'
+        && value !== null
+        && Object.prototype.toString.call(value) === '[object Boolean]');
 }
 
 export default isBoolean;
