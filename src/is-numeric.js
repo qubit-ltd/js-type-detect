@@ -27,6 +27,13 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isNumeric(value) {
+  const type = typeof value;
+  if (type === 'number' || type === 'bigint') {
+    return true;
+  }
+  if (type !== 'object' || value === null) {
+    return false;
+  }
   return hasToStringValueOf(value, NUMERIC_TYPE_NAMES);
 }
 
