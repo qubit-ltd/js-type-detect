@@ -20,6 +20,9 @@ import SVG_DOM_TYPE_NAMES from './impl/svg-dom-type-names';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isSvgDom(obj) {
+  if (typeof obj !== 'object' || obj === null) {
+    return false;
+  }
   return hasTypeNameOf(obj, SVG_DOM_TYPE_NAMES);
 }
 
