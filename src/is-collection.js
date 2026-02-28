@@ -22,6 +22,15 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isCollection(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+  if (typeof Map !== 'undefined' && value instanceof Map) {
+    return true;
+  }
+  if (typeof Set !== 'undefined' && value instanceof Set) {
+    return true;
+  }
   return hasToStringValueOf(value, COLLECTION_TYPE_NAMES);
 }
 
