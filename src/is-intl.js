@@ -22,6 +22,9 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see <a href="https://github.com/sindresorhus/is/tree/main?tab=readme-ov-file#why-not-just-use-instanceof-instead-of-this-package">Why not just use instanceof instead of this package?</a>
  */
 function isIntl(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
   return hasToStringValueOf(value, INTL_TYPE_NAMES);
 }
 
