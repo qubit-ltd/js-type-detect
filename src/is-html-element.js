@@ -19,13 +19,7 @@ const DOM_PROPERTIES_TO_CHECK = [
 ];
 
 function isCustomizedHtmlElement(value) {
-  if (value === null) {
-    return false;
-  }
-  if (typeof value !== 'object') {
-    return false;
-  }
-  if ((typeof value.nodeName) !== 'string') {
+  if (typeof value.nodeName !== 'string') {
     return false;
   }
   if (isPlainObject(value)) {
@@ -44,6 +38,9 @@ function isCustomizedHtmlElement(value) {
  * @author Haixing Hu
  */
 function isHtmlElement(value) {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
   return hasTypeNameOf(value, HTML_ELEMENT_TYPE_NAMES) || isCustomizedHtmlElement(value);
 }
 
