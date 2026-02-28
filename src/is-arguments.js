@@ -35,7 +35,7 @@ function isArguments(value) {
       // checks to ensure it's a real arguments object.
       try {
         return (typeof value.length === 'number')
-            && (('callee' in value) || ('length' in value));
+            && ('callee' in value);
       } catch (e) {
         // In strict mode, accessing 'callee' may throw TypeError
         return e instanceof TypeError && e.message.includes('callee');

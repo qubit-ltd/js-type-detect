@@ -25,48 +25,37 @@ describe('Test the `isArguments()` function', () => {
   });
 
   it('invalid arguments', () => {
-    // 使用Symbol.toStringTag创建一个伪装成Arguments的对象
+    // Use Symbol.toStringTag to create an object disguised as Arguments
     const fakeArgs = {
       [Symbol.toStringTag]: 'Arguments',
     };
-    // 没有callee和length属性，所以不是真正的arguments对象
+    // No callee and length is not a number, so it's not a real arguments object
     expect(isArguments(fakeArgs)).toBe(false);
 
-    // 添加一个更完整的模拟，但仍有一些缺失
-    const incompleteArgs = {
+    // Add length but no callee
+    const fakeArgsWithLength = {
       [Symbol.toStringTag]: 'Arguments',
-      callee() {},
-      length: 3,
+      length: 1,
     };
-    // 重新定义toString方法来避免使用Symbol.toStringTag
-    const originalToString = Object.prototype.toString;
+    expect(isArguments(fakeArgsWithLength)).toBe(false);
 
-    // eslint-disable-next-line no-extend-native
-    Object.prototype.toString = function () {
-      if (this === incompleteArgs) {
-        return '[object Arguments]';
-      }
-      return originalToString.call(this);
+    // Object with indices, length, iterator, but no callee
+    const fakeArgsCompleteWithoutCallee = {
+      '0': 'x',
+      'length': 1,
+      [Symbol.toStringTag]: 'Arguments',
+      [Symbol.iterator]: () => {},
     };
+    expect(isArguments(fakeArgsCompleteWithoutCallee)).toBe(false);
 
-    // 现在添加数字索引属性，这个应该返回true
+    // Object with callee and length should return true
     const completelyFakeArgs = {
       'callee': function () {},
-      'length': 3,
-      '0': 'a',
-      '1': 'b',
-      '2': 'c',
+      'length': 1,
+      '0': 'x',
+      [Symbol.toStringTag]: 'Arguments',
     };
-    Object.defineProperty(completelyFakeArgs, Symbol.toStringTag, {
-      value: 'Arguments',
-      configurable: true,
-    });
     expect(isArguments(completelyFakeArgs)).toBe(true);
-
-    // 恢复原始toString方法
-
-    // eslint-disable-next-line no-extend-native
-    Object.prototype.toString = originalToString;
   });
 
   it('checks for error accessing callee in strict mode', () => {
