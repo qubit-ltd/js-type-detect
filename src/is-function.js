@@ -23,6 +23,9 @@ import hasToStringValueOf from './impl/has-to-string-value-of';
  * @see isGenerator
  */
 function isFunction(value) {
+  if (typeof value !== 'function') {
+    return false;
+  }
   return hasToStringValueOf(value, FUNCTION_TYPE_NAMES);
 }
 
