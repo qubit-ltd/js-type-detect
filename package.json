@@ -1,6 +1,6 @@
 {
   "name": "@qubit-ltd/type-detect",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "A JavaScript library for detecting common types",
   "author": "Haixing Hu",
   "license": "Apache-2.0",
