@@ -1,17 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////
-import getTypeName from './get-type-name';
-import BUILT_IN_TYPE_NAMES from './impl/built-in-type-names';
 //
-//    Copyright (c) 2022 - 2024.
+//    Copyright (c) 2022 - 2025.
 //    Haixing Hu, Qubit Co. Ltd.
 //
 //    All rights reserved.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
+import getTypeName from './get-type-name';
+import BUILT_IN_TYPE_NAMES from './impl/built-in-type-names';
 import GLOBAL_OBJECT_NAMES from './impl/global-object-names';
 import hasToStringValueOf from './impl/has-to-string-value-of';
-
-/* eslint-disable no-undef */
 
 /**
  * Tests whether the specified constructor function is the constructor of a
