@@ -2237,20 +2237,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qubit-ltd/eslint-config@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@qubit-ltd/eslint-config@npm:2.0.1"
+"@qubit-ltd/eslint-config@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@qubit-ltd/eslint-config@npm:2.0.2"
   dependencies:
     "@eslint/js": "npm:^9.35.0"
     eslint: "npm:^9.35.0"
     eslint-plugin-import: "npm:^2.31.0"
-  checksum: 10c0/568956019d4766c17f46a0758638c879d6ad2a8c88ebd5a015a7140d4cb1477ef181a6ca52cd8a35d78f1c0de47b632c5a0c50bc45063a21d519e49aeba09eb6
+  checksum: 10c0/b6aab544fe100520b9611e1bc8b1c06c5a750c7118fa60d035b76f10b162b27aa91ab393ad21a8ec77c6368d2703ff414365eef9f057286a445d817243a16f29
   languageName: node
   linkType: hard
 
-"@qubit-ltd/jsdoc-theme@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "@qubit-ltd/jsdoc-theme@npm:1.5.2"
+"@qubit-ltd/jsdoc-theme@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "@qubit-ltd/jsdoc-theme@npm:1.5.3"
   dependencies:
     "@jsdoc/salty": "npm:^0.2.4"
     fs-extra: "npm:^10.1.0"
@@ -2260,13 +2260,13 @@ __metadata:
     showdown: "npm:^2.1.0"
   peerDependencies:
     jsdoc: ">=3.x <=4.x"
-  checksum: 10c0/c77ada44b7cd283259ff0801103900eb373639ec2332a3a8bf2f292246f68828e1ae9df266282ee01ee4fb659226e3c254090bb751d1fa1e0efdcea14c921df1
+  checksum: 10c0/323d34d3c64f6394f4d4b71fe37ed54cc8f24358630d106c7637fd13b11b360f6db9d29e6d16704bfabec3c03bd82f8faaa093cf8b8ec4eaff6a9c59bc7611b3
   languageName: node
   linkType: hard
 
-"@qubit-ltd/rollup-builder@npm:^1.8.14":
-  version: 1.8.14
-  resolution: "@qubit-ltd/rollup-builder@npm:1.8.14"
+"@qubit-ltd/rollup-builder@npm:^1.8.15":
+  version: 1.8.15
+  resolution: "@qubit-ltd/rollup-builder@npm:1.8.15"
   peerDependencies:
     "@babel/core": ^7.28.5
     "@babel/plugin-transform-runtime": ^7.28.5
@@ -2281,7 +2281,7 @@ __metadata:
     rollup: ^4.53.3
     rollup-plugin-analyzer: ^4.0.0
     rollup-plugin-visualizer: ^6.0.5
-  checksum: 10c0/dad45782af905bae72b2e1394b43d6763362eccc70f5519773ff1c8ba79ca816880ef1259ef64113721035c7fca49f1602c465738b06848775629ccf6fc02c3c
+  checksum: 10c0/058faee5c674c14922ea62b1c787ee9e19110f9ef943c6ea396471d87a4891385722e4e4cca9d5361bf3d1c32c029d252143804eda33291d8639ac9e2b2a9b46
   languageName: node
   linkType: hard
 
@@ -2296,9 +2296,9 @@ __metadata:
     "@babel/preset-env": "npm:^7.28.3"
     "@babel/runtime": "npm:^7.28.4"
     "@jest/core": "npm:^30.1.3"
-    "@qubit-ltd/eslint-config": "npm:^2.0.1"
-    "@qubit-ltd/jsdoc-theme": "npm:^1.5.2"
-    "@qubit-ltd/rollup-builder": "npm:^1.8.14"
+    "@qubit-ltd/eslint-config": "npm:^2.0.2"
+    "@qubit-ltd/jsdoc-theme": "npm:^1.5.3"
+    "@qubit-ltd/rollup-builder": "npm:^1.8.15"
     "@rollup/plugin-alias": "npm:^6.0.0"
     "@rollup/plugin-babel": "npm:^6.0.4"
     "@rollup/plugin-commonjs": "npm:^29.0.0"
@@ -3626,9 +3626,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001759":
-  version: 1.0.30001775
-  resolution: "caniuse-lite@npm:1.0.30001775"
-  checksum: 10c0/96e59a83abd171c729db80a93d7a50becebc145102e3c2d2ea4b3749385cae1e6e09155bada486f662fa070009989d043c4c60f1ee64a19eb50139c7e6dbe574
+  version: 1.0.30001776
+  resolution: "caniuse-lite@npm:1.0.30001776"
+  checksum: 10c0/d5a7624ea50548c6c4381979a2900ac451caa7ecbeafec209309da25d547ba1406355cf66d6c6d537d8532ab5a56f2bbc0bf62300a4c3f66aa6fca5954264735
   languageName: node
   linkType: hard
 
@@ -4005,14 +4005,14 @@ __metadata:
   linkType: hard
 
 "dedent@npm:^1.0.0, dedent@npm:^1.6.0":
-  version: 1.7.1
-  resolution: "dedent@npm:1.7.1"
+  version: 1.7.2
+  resolution: "dedent@npm:1.7.2"
   peerDependencies:
     babel-plugin-macros: ^3.1.0
   peerDependenciesMeta:
     babel-plugin-macros:
       optional: true
-  checksum: 10c0/ae29ec1c5bd5216c698c9f23acaa5b720260fd4cef3c8b5af887eb5f8c9e6fdd5fed8668767437b4efea35e2991bd798987717633411a1734807c28255769b78
+  checksum: 10c0/acaff07cac355b93f17b1b17ebbb84d3cc55af6ab4b7814c3f505e061903e168bc6bf9ddce331552d64dee1525f0b4c549c9ade46aebfac6f69caaed74e90751
   languageName: node
   linkType: hard
 
@@ -4705,9 +4705,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.2.9":
-  version: 3.3.3
-  resolution: "flatted@npm:3.3.3"
-  checksum: 10c0/e957a1c6b0254aa15b8cce8533e24165abd98fadc98575db082b786b5da1b7d72062b81bfdcd1da2f4d46b6ed93bec2434e62333e9b4261d79ef2e75a10dd538
+  version: 3.3.4
+  resolution: "flatted@npm:3.3.4"
+  checksum: 10c0/d1f33426e9714063a65a90940acdb2897eceb810230a58e496d90334dcecfa81a90135bbc660df6827939865d57cb4a2afab14dcd3d505e16a8484fd73bf9642
   languageName: node
   linkType: hard
 
